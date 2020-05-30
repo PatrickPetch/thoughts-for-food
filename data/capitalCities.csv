@@ -12,10 +12,8 @@ ATG,Saint John’s,Antigua And Barbuda,17.118,-61.85
 AUS,Canberra,Australia,-35.283,149.129
 AUT,Vienna,Austria,48.2,16.3666
 AZE,Baku,Azerbaijan,40.3953,49.8622
-BDI,Bujumbura,Burundi,-3.3761,29.36
 BDI,Gitega,Burundi,-3.4271,29.9246
 BEL,Brussels,Belgium,50.8333,4.3333
-BEN,Cotonou,Benin,6.4,2.52
 BEN,Porto-Novo,Benin,6.4833,2.6166
 BFA,Ouagadougou,Burkina Faso,12.3703,-1.5247
 BGD,Dhaka,Bangladesh,23.7231,90.4086
@@ -26,7 +24,6 @@ BIH,Sarajevo,Bosnia And Herzegovina,43.85,18.383
 BLR,Minsk,Belarus,53.9,27.5666
 BLZ,Belmopan,Belize,17.252,-88.7671
 BOL,La Paz,Bolivia,-16.498,-68.15
-BOL,Sucre,Bolivia,-19.041,-65.2595
 BRA,Brasília,Brazil,-15.7833,-47.9161
 BRB,Bridgetown,Barbados,13.102,-59.6165
 BRN,Bandar Seri Begawan,Brunei,4.8833,114.9333
@@ -37,7 +34,6 @@ CAN,Ottawa,Canada,45.4167,-75.7
 CHE,Bern,Switzerland,46.9167,7.467
 CHL,Santiago,Chile,-33.45,-70.667
 CHN,Beijing,China,39.9289,116.3883
-CIV,Abidjan,Côte D’Ivoire,5.32,-4.04
 CIV,Yamoussoukro,Côte D’Ivoire,6.8184,-5.2755
 CMR,Yaoundé,Cameroon,3.8667,11.5167
 COD,Kinshasa,Congo (Kinshasa),-4.3297,15.315
@@ -124,7 +120,6 @@ MHL,Majuro,Marshall Islands,7.103,171.38
 MKD,Skopje,Macedonia,42,21.4335
 MLI,Bamako,Mali,12.65,-8
 MLT,Valletta,Malta,35.8997,14.5147
-MMR,Rangoon,Burma,16.7834,96.1667
 MMR,Nay Pyi Taw,Burma,19.7666,96.1186
 MNE,Podgorica,Montenegro,42.466,19.2663
 MNG,Ulaanbaatar,Mongolia,47.9167,106.9166
@@ -138,7 +133,6 @@ NAM,Windhoek,Namibia,-22.57,17.0835
 NER,Niamey,Niger,13.5167,2.1167
 NGA,Abuja,Nigeria,9.0833,7.5333
 NIC,Managua,Nicaragua,12.153,-86.2685
-NLD,The Hague,Netherlands,52.08,4.27
 NLD,Amsterdam,Netherlands,52.35,4.9166
 NOR,Oslo,Norway,59.9167,10.75
 NPL,Kathmandu,Nepal,27.7167,85.3166
@@ -175,7 +169,6 @@ SVK,Bratislava,Slovakia,48.15,17.117
 SVN,Ljubljana,Slovenia,46.0553,14.515
 SWE,Stockholm,Sweden,59.3508,18.0973
 SWZ,Mbabane,Swaziland,-26.3167,31.1333
-SWZ,Lobamba,Swaziland,-26.4667,31.2
 SXM,Philipsburg,Sint Maarten,18.0255,-63.045
 SYC,Victoria,Seychelles,-4.6166,55.45
 SYR,Damascus,Syria,33.5,36.3
@@ -191,7 +184,6 @@ TUN,Tunis,Tunisia,36.8028,10.1797
 TUR,Ankara,Turkey,39.9272,32.8644
 TUV,Funafuti,Tuvalu,-8.5167,179.2166
 TWN,Taipei,Taiwan,25.0358,121.5683
-TZA,Dar es Salaam,Tanzania,-6.8,39.2683
 TZA,Dodoma,Tanzania,-6.1833,35.75
 UGA,Kampala,Uganda,0.3167,32.5833
 UKR,Kyiv,Ukraine,50.4334,30.5166
@@ -206,8 +198,6 @@ WSM,Apia,Samoa,-13.8415,-171.739
 XKS,Pristina,Kosovo,42.6666,21.1724
 XWB,Al Quds,West Bank,31.7764,35.2269
 YEM,Sanaa,Yemen,15.3547,44.2066
-ZAF,Cape Town,South Africa,-33.92,18.435
 ZAF,Pretoria,South Africa,-25.7069,28.2294
-ZAF,Bloemfontein,South Africa,-29.12,26.2299
 ZMB,Lusaka,Zambia,-15.4166,28.2833
 ZWE,Harare,Zimbabwe,-17.8178,31.0447
