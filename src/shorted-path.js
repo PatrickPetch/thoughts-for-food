@@ -4,6 +4,12 @@ const available = JSON.parse(fs.readFileSync('../data/availability.json', 'utf8'
 const need = JSON.parse(fs.readFileSync('../data/need.json', 'utf8'));
 const connectedCountry = JSON.parse(fs.readFileSync('../data/connected-countries.json', 'utf8'));
 
+// Sort the neighbouring countries from closest to furthest
+for (const country in connectedCountry) {
+  connectedCountry[country] = connectedCountry[country].sort((a, b) => a[1] - b[1]);
+  console.log(connectedCountry[country])
+}
+
 const outFile = '../out/transfer.csv';
 
 fs.truncateSync(outFile);
