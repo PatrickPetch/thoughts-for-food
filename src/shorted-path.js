@@ -7,10 +7,10 @@ const connectedCountry = JSON.parse(fs.readFileSync('../data/connected-countries
 // Sort the neighbouring countries from closest to furthest
 for (const country in connectedCountry) {
   connectedCountry[country] = connectedCountry[country].sort((a, b) => a[1] - b[1]);
-  console.log(connectedCountry[country])
 }
 
 const outFile = '../out/transfer.csv';
+// const outFile = '../out/transfer-neighbours-only.csv';
 
 fs.truncateSync(outFile);
 
