@@ -23,7 +23,7 @@ From our algorithms, we limit sharing their productions to only their neighbours
 If production sharing is not limited to only neighbouring countries, China, as anticipated, who is currently the world's largest calories producer, is capable of sharing her resources to other countries in need.
 
 |![Neighbours only](img/neighbour-only.png)|![All possible](img/all-possible.png)|
-|---|---|---|
+|---|---|
 |The map showing the suggested solutions with the only-neighbour constraint|The map showing the suggested solutions when any country can send to anywhere in the world|
 
 ## Team Members
