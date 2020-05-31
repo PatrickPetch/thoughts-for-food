@@ -1,59 +1,66 @@
-const available = {
-  thailand: 10,
-  laos: 2,
-  singapore: 2,
-};
+const fs = require('fs');
 
-const need = {
-  thailand: 4,
-  laos: 10,
-  singapore: 8,
-};
+const available = JSON.parse(fs.readFileSync('../data/availability.json', 'utf8'));
+const need = JSON.parse(fs.readFileSync('../data/need.json', 'utf8'));
+const connectedCountry = JSON.parse(fs.readFileSync('../data/connected-countries.json', 'utf8'));
+
+const outFile = '../out/transfer.csv';
+
+fs.truncateSync(outFile);
 
 const difference = {};
 
 for (const country in available) {
   difference[country] = available[country] - need[country];
+  // console.log(`Difference of ${country} = ${available[country]} - ${need[country]} = ${available[country] - need[country]} (${difference[country]})`)
+  
+  // List of country that needs
+  if (difference[country] < 0) console.log(country)
 }
+
+const columnHeads = 'origin,destination,amount\n';
+fs.appendFileSync(outFile, columnHeads);
 
 console.log(difference)
 
 function distribute(origin, destination) {
+  // If it needs more than it has
   if (difference[origin] <= 0) return;
+  
+  // If it doesn't need
+  if (difference[destination] >= 0) return;
+
+  let sentAmount = 0;
 
   if (difference[origin] >= Math.abs(difference[destination])) {
-    difference[origin] -= Math.abs(difference[destination]);
-    difference[destination] += Math.abs(difference[destination]);
+    sentAmount = Math.abs(difference[destination]);
+    difference[origin] -= sentAmount;
+    difference[destination] += sentAmount;
   } else {
-    difference[destination] += difference[origin];
+    sentAmount = difference[origin];
+    difference[destination] += sentAmount;
     difference[origin] = 0;
   }
 
-  console.log(difference);
+  // const transferLog = `Send from: ${origin} -to-> ${destination} ${sentAmount} (${difference[origin]} left)\n`;
+  const transferLog = `${origin},${destination},${sentAmount}\n`;
+  fs.appendFileSync(outFile, transferLog);
+  console.log(transferLog)
 }
-
-const connectedCountry = {
-  thailand: [
-    ['laos', 50],
-  ],
-  laos: [
-    ['thailand', 50],
-  ],
-  singapore: [],
-};
 
 function shareResources() {
   for (const country in connectedCountry) {
     const listOfConnectedCountries = connectedCountry[country];
     let nextCountryToSendIndex = 0;
-    console.log(`Sending from: ${country}`);
 
     while (difference[country] > 0) {
-      const nextCountryKey = listOfConnectedCountries[nextCountryToSendIndex][0];
-      console.log(`Sending to ${nextCountryKey}`)
+      const nextCountryKey = listOfConnectedCountries[nextCountryToSendIndex++][0];
       distribute(country, nextCountryKey);
     }
   }
 }
 
 shareResources();
+
+// console.log(difference)
+console.log(difference)
