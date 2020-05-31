@@ -1,38 +1,41 @@
+// Requires the file system library
 const fs = require('fs');
 
+// Load the data files
 const available = JSON.parse(fs.readFileSync('../data/availability.json', 'utf8'));
 const need = JSON.parse(fs.readFileSync('../data/need.json', 'utf8'));
-const connectedCountry = JSON.parse(fs.readFileSync('../data/connected-countries.json', 'utf8'));
+const connectedCountry = JSON.parse(fs.readFileSync('../data/connected-countries-all-possibilities.json', 'utf8'));
+
+// Configs the output file
+// Notes: it must exist before running
+// const outFile = '../out/transfer.csv';
+// const outFile = '../out/transfer-neighbours-only.csv';
+const outFile = '../out/transfer-all-possibilities.csv';
+
+// Clears the file so it doesn't have old content
+fs.truncateSync(outFile);
+
+// Set the CSV columns
+const columnHeads = 'origin,destination,amount\n';
+fs.appendFileSync(outFile, columnHeads);
 
 // Sort the neighbouring countries from closest to furthest
+// so it reduces the logistical costs
 for (const country in connectedCountry) {
   connectedCountry[country] = connectedCountry[country].sort((a, b) => a[1] - b[1]);
 }
 
-const outFile = '../out/transfer.csv';
-// const outFile = '../out/transfer-neighbours-only.csv';
-
-fs.truncateSync(outFile);
-
+// Creates a dictionary to store the difference between the availability and the needs
 const difference = {};
 
 for (const country in available) {
   difference[country] = available[country] - need[country];
-  // console.log(`Difference of ${country} = ${available[country]} - ${need[country]} = ${available[country] - need[country]} (${difference[country]})`)
-  
-  // List of country that needs
-  // if (difference[country] < 0) console.log(country)
 }
-
-const columnHeads = 'origin,destination,amount\n';
-fs.appendFileSync(outFile, columnHeads);
-
-// console.log(difference)
 
 function distribute(origin, destination) {
   // If it needs more than it has
   if (difference[origin] <= 0) return;
-  
+
   // If it doesn't need
   if (difference[destination] >= 0) return;
 
@@ -48,10 +51,8 @@ function distribute(origin, destination) {
     difference[origin] = 0;
   }
 
-  // const transferLog = `Send from: ${origin} -to-> ${destination} ${sentAmount} (${difference[origin]} left)\n`;
   const transferLog = `${origin},${destination},${sentAmount}\n`;
   fs.appendFileSync(outFile, transferLog);
-  // console.log(transferLog)
 }
 
 function shareResources() {
