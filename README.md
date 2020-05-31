@@ -1,6 +1,6 @@
-# Food Fill Algorithm Project
+# Food Fill Algorithm Project | Team Thoughts for Food
 
-> Thoughts for Food Team | NASA Space App COVID-19 Hackathon
+> NASA Space App COVID-19 Hackathon
 
 ## Team Members
 
