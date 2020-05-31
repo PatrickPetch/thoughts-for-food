@@ -15,13 +15,13 @@ for (const country in available) {
   // console.log(`Difference of ${country} = ${available[country]} - ${need[country]} = ${available[country] - need[country]} (${difference[country]})`)
   
   // List of country that needs
-  if (difference[country] < 0) console.log(country)
+  // if (difference[country] < 0) console.log(country)
 }
 
 const columnHeads = 'origin,destination,amount\n';
 fs.appendFileSync(outFile, columnHeads);
 
-console.log(difference)
+// console.log(difference)
 
 function distribute(origin, destination) {
   // If it needs more than it has
@@ -45,7 +45,7 @@ function distribute(origin, destination) {
   // const transferLog = `Send from: ${origin} -to-> ${destination} ${sentAmount} (${difference[origin]} left)\n`;
   const transferLog = `${origin},${destination},${sentAmount}\n`;
   fs.appendFileSync(outFile, transferLog);
-  console.log(transferLog)
+  // console.log(transferLog)
 }
 
 function shareResources() {
@@ -54,6 +54,7 @@ function shareResources() {
     let nextCountryToSendIndex = 0;
 
     while (difference[country] > 0) {
+      if (!listOfConnectedCountries[nextCountryToSendIndex + 1]) break;
       const nextCountryKey = listOfConnectedCountries[nextCountryToSendIndex++][0];
       distribute(country, nextCountryKey);
     }
@@ -63,4 +64,3 @@ function shareResources() {
 shareResources();
 
 // console.log(difference)
-console.log(difference)
