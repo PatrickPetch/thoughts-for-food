@@ -32,4 +32,3 @@ If production sharing is not limited to only neighbouring countries, China, as a
 2. [Phumrapee Pisutsin](https://www.linkedin.com/in/phumrapee)
 3. [Thammarith Likhittheerameth](https://www.linkedin.com/in/thammarith)
 4. [Nattapak Darumas](https://www.linkedin.com/in/ndarumas)
-()
