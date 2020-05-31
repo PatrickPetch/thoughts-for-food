@@ -1,8 +1,8 @@
-# Thoughts for Food Team
-## Food Fill Algorithm Project
-### NASA Space App COVID-19 Hackathon
+# Thoughts for Food Team | NASA Space App COVID-19 Hackathon
 
-Team Members:
+## Food Fill Algorithm Project
+
+## Team Members
 
 1. Nattapak Darumas
 2. Phumrapee Pisutsin
